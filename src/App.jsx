@@ -1,18 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { Button } from "flowbite-react";
-import { Alert } from "flowbite-react";
+import React from 'react'
+import Navbar from './Components/navbar'
 
-
-
-function App() {
-  
+const App = () => {
   return (
     <>
-     <h1>App.JSX</h1>
-    </>
+   {/* <Navbar
+  menuItems={[
+    { label: "Home", href: "#" },
+    { label: "About", href: "#" },
+    { label: "Services", href: "#" },
+    { label: "Contact", href: "#" }
+  ]}
+/> */}
+<Navbar/>
+   </>
   )
 }
 
