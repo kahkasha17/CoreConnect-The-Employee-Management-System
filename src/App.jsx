@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react'
-import Navbar from './Components/navbar'
+import Main from './Pages/Main'
 
 const App = () => {
   return (
@@ -13,7 +13,8 @@ const App = () => {
     { label: "Contact", href: "#" }
   ]}
 /> */}
-<Navbar/>
+<Main/>
+
    </>
   )
 }
