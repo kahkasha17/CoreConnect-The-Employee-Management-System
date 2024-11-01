@@ -51,7 +51,7 @@ const LoginForm = () => {
         <div className="flex items-center gap-2">
           <Checkbox id="remember" required />
           <Label htmlFor="remember">Remember me</Label>
-          <a href="#" className="ml-auto text-blue-600 font-medium">
+          <a href="#" className="ml-auto text-blue-600 font-medium text-md">
             Forget Password?
           </a>
         </div>

@@ -2,8 +2,6 @@
 
 import { Footer } from "flowbite-react";
 import {
-  BsDribbble,
-  BsFacebook,
   BsGithub,
   BsInstagram,
   BsLinkedin,
@@ -14,8 +12,8 @@ import React from "react";
 
 const Footers = () => {
   return (
-    <Footer container>
-      <div className="w-full">
+    <Footer container >
+      <div className="w-full mt-10">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 text-2xl ">
           <div>
             <Footer.Brand
@@ -58,13 +56,13 @@ const Footers = () => {
           </div>
         </div>
         <Footer.Divider />
-        <div className="w-full sm:flex sm:items-center sm:justify-between">
+        <div className="w-full sm:flex sm:items-center justify-between">
           <Footer.Copyright
             href="#"
             by="Galaxy™ All Rights Reserved."
             year={2024}
           />
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+          <div className="mt-4 flex space-x-6 sm:mt-0 justify-center">
             <Footer.Icon
               href="#"
               icon={BsTelegram}
