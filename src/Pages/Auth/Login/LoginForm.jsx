@@ -15,7 +15,7 @@ const LoginForm = () => {
     setPassword("")
   };
   return (
-    <Card className="max-w-sm">
+    <Card className="max-w-lg">
       <h1 className="text-red-500 font-bold">LOGIN TO YOUR ACCOUNT</h1>
       <form
         className="flex flex-col gap-4"

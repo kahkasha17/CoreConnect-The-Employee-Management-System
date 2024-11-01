@@ -1,6 +1,7 @@
 import React from "react";
 import LoginForm from "../Auth/Login/LoginForm";
-import Banner from "./Banner";
+import Banner from "../../Components/Banner";
+import { HorizontalLine } from "../../Components/HorizontalLine";
 
 const Home = () => {
   return (
@@ -8,15 +9,23 @@ const Home = () => {
       {/* <Banner/>
       <LoginForm/> */}
 
-      <section className="bg-gray-100 dark:bg-gray-900 ">
-        <div className="py-8 px-4 mt-10 mx-auto  max-w-screen-xl lg:py-16">
-          <div className="bg-[url('./homebk.jpg')] border border-gray-200 dark:border-gray-700 rounded-lg p-10 md:p-12 mb-8">
-            <div className="grid md:grid-cols-2 gap-6">
+      <section className="bg-gray-100 dark:bg-gray-900 h-screen">
+        <div className="mt-10 mx-auto lg:py-16 h-full">
+          <div
+            className="bg-cover bg-center border border-gray-200 dark:border-gray-700 rounded-lg p-10 "
+            style={{ backgroundImage: "url('./homebk.jpg') ", height: "70%" }}
+          >
+            <div
+              className="grid md:grid-cols-2 gap-4"
+              style={{ marginTop: "5%" }}
+            >
               <Banner />
               <LoginForm />
             </div>
           </div>
+          <HorizontalLine/>
         </div>
+   
       </section>
     </>
   );
