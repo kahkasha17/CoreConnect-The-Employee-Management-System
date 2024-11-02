@@ -3,4 +3,23 @@
 @tailwind utilities;
 
 
+.oswald-root {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
 
+.rubik-wet-paint-regular {
+    font-family: "Rubik Wet Paint", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+  .lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
