@@ -1,6 +1,7 @@
 import './App.css'
 import React from 'react'
 import Main from './Pages/Main'
+import { EmployeeDashboard } from './Pages/Dashboard/Employee/EmployeeDashboard'
 
 const App = () => {
   return (
@@ -13,8 +14,8 @@ const App = () => {
     { label: "Contact", href: "#" }
   ]}
 /> */}
-<Main/>
-
+{/* <Main/> */}
+<EmployeeDashboard/>
    </>
   )
 }
