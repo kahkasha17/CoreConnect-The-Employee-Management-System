@@ -1,27 +1,10 @@
 "use client";
 
-import { Button, Drawer, Sidebar, TextInput } from "flowbite-react";
+import { Avatar, Button, Drawer, Sidebar, TextInput } from "flowbite-react";
 import { useState } from "react";
-import {
-    HiCalendar,
-  HiChartPie,
-  HiClipboard,
-  HiCollection,
-  HiCurrencyRupee,
-  HiInformationCircle,
-  HiLogin,
-  HiLogout,
-  HiMenu,
-  HiPencil,
-  HiSearch,
-  HiShoppingBag,
-  HiUser,
-  HiUsers,
-} from "react-icons/hi";
-
 import React from "react";
 
-export const SideDrawer = () => {
+export const SideDrawer = ({ menuItems }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => setIsOpen(false);
@@ -29,15 +12,22 @@ export const SideDrawer = () => {
   return (
     <>
       {!isOpen && (
-        <Button
-          className="absolute top-4 left-4"
+        <Button gradientDuoTone="info"
+          className="absolute top-4 left-4 z-10 "
           onClick={() => setIsOpen(true)}
         >
-          <HiMenu className="text-xl" />
+          <span className="text-xl">☰</span>
         </Button>
       )}
       <Drawer backdrop={false} open={isOpen} onClose={handleClose}>
-        <Drawer.Header title="MENU" titleIcon={() => <></>} />
+        <Drawer.Header titleIcon={() => <></>} />
+        <div className="flex flex-col items-center ">
+          <Avatar img="/Logo.png" rounded size="xl" />
+          <div className="text-center font-medium dark:text-white">
+            <div>Jese Leos</div>
+          </div>
+        </div>
+
         <Drawer.Items>
           <Sidebar
             aria-label="Sidebar with multi-level dropdown example"
@@ -45,59 +35,29 @@ export const SideDrawer = () => {
           >
             <div className="flex h-full flex-col justify-between py-2">
               <div>
-                <form className="pb-3 md:hidden">
+                <form className="pb-3  ">
                   <TextInput
-                    icon={HiSearch}
                     type="search"
                     placeholder="Search"
                     required
                     size={32}
+                    className="rounded-full px-4 py-2"
                   />
                 </form>
                 <Sidebar.Items>
-                  <Sidebar.ItemGroup>
-                    <Sidebar.Item href="/" icon={HiChartPie}>
-                      Dashboard
-                    </Sidebar.Item>
-                    <Sidebar.Item
-                      href="#"
-                      icon={HiUser}
-                    >
-                      Profile
-                    </Sidebar.Item>
-                    <Sidebar.Item href="#" icon={HiCurrencyRupee}>
-                      Payroll
-                    </Sidebar.Item>
-                    <Sidebar.Item href="#" icon={HiCalendar}>
-                    Attendance & Leaves
-                    </Sidebar.Item>
-                     <Sidebar.Item
-                      href="/authentication/sign-up"
-                      icon={HiLogout}
-                    >
-                      Sign up
-                    </Sidebar.Item>
-                  </Sidebar.ItemGroup>
-                  <Sidebar.ItemGroup>
-                    <Sidebar.Item
-                      href="https://github.com/themesberg/flowbite-react/"
-                      icon={HiClipboard}
-                    >
-                      Document
-                    </Sidebar.Item>
-                    <Sidebar.Item
-                      href="https://flowbite-react.com/"
-                      icon={HiCollection}
-                    >
-                      Benefit
-                    </Sidebar.Item>
-                    <Sidebar.Item
-                      href="https://github.com/themesberg/flowbite-react/issues"
-                      icon={HiInformationCircle}
-                    >
-                      Help
-                    </Sidebar.Item>
-                  </Sidebar.ItemGroup>
+                  {menuItems.map((group, index) => (
+                    <Sidebar.ItemGroup key={index}>
+                      {group.items.map((item) => (
+                        <Sidebar.Item
+                          key={item.label}
+                          href={item.href}
+                          icon={item.icon}
+                        >
+                          {item.label}
+                        </Sidebar.Item>
+                      ))}
+                    </Sidebar.ItemGroup>
+                  ))}
                 </Sidebar.Items>
               </div>
             </div>
