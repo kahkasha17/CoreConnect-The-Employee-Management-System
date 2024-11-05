@@ -8,4 +8,7 @@ export const UserAvatar = ({ img, name }) => {
       <div className="mt-2">{name}</div>
     </div>
   )
-}
+};
+
+export default UserAvatar; // Default export
+

@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { SideDrawer } from "../../../Components/SideDrawer";
-import Footers from "../../../Components/Footers";
 import {
   HiBriefcase,
   HiCalendar,
@@ -9,13 +8,13 @@ import {
   HiCurrencyRupee,
   HiInformationCircle,
   HiLogout,
-  HiMenu,
-  HiSearch,
   HiUser,
 } from "react-icons/hi";
+import { MainContent } from "./MainContent";
 
 export const EmployeeDashboard = () => {
-  // Usage example:
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
   const menuData = [
     {
       items: [
@@ -28,37 +27,26 @@ export const EmployeeDashboard = () => {
     },
     {
       items: [
-        {
-          label: "Task",
-          href: "https://github.com/themesberg/flowbite-react/",
-          icon: HiClipboard,
-        },
-        {
-          label: "Job",
-          href: "https://flowbite-react.com/",
-          icon: HiBriefcase,
-        },
-        {
-          label: "Help",
-          href: "https://github.com/themesberg/flowbite-react/issues",
-          icon: HiInformationCircle,
-        },
+        { label: "Task", href: "https://github.com/themesberg/flowbite-react/", icon: HiClipboard },
+        { label: "Job", href: "https://flowbite-react.com/", icon: HiBriefcase },
+        { label: "Help", href: "https://github.com/themesberg/flowbite-react/issues", icon: HiInformationCircle },
       ],
     },
   ];
 
   return (
-   <>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-0"> {/* Use gap-0 to eliminate space between columns */}
-      <div className="col p-2 border-red-600 border"> {/* Optional: Adjust padding as needed */}
-        <SideDrawer menuItems={menuData}  />
-      </div>
-      <div className="col p-2 border-red-600 border" >
-      <h1 >hello</h1>
+    <div className="h-screen flex overflow-hidden relative bg-sky-50">
+      {/* Sidebar */}
+      <SideDrawer menuItems={menuData} isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+
+      {/* Main Content Area */}
+      <div
+        className={`flex-1 transition-all duration-300 ${
+          isSidebarOpen ? "ml-80" : "ml-20" // Increased margin-left when sidebar is open
+        } p-4`}
+      >
+        <MainContent/>
       </div>
     </div>
-
-    
-  </>
   );
 };
