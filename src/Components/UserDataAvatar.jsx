@@ -1,23 +1,38 @@
-import { Avatar, Badge } from "flowbite-react";
+import { Avatar, Badge, Button } from "flowbite-react";
 import React from "react";
 
-const UserDataAvatar = ({ img }) => {
+const UserDataAvatar = ({ img, name, role, department, email, phone }) => {
   return (
-    <Avatar img={img} rounded status="online" statusPosition="bottom-right" size="lg" className="space-x-8">
-      <div className="space-y-1   font-medium dark:text-white">
-        <div className="flex items-center justify-between"> {/* Use flexbox to align items */}
-          <span>Kahkasha Rafat Fatima</span>
-          <Badge color="success" className="ml-2">Active</Badge> {/* Add margin-left to the badge */}
+    <Avatar img={img} rounded statusPosition="bottom-right" size="xl" className="space-x-8">
+      <div className="space-y-1 font-medium dark:text-white">
+        {/* User Name and Status */}
+        <div className="flex items-center justify-between">
+          <span>{name}</span>
+          <Badge color="success" size="md" className="ml-4">Active</Badge>
         </div>
+        
+        {/* Role */}
         <div className="text-sm text-gray-500 dark:text-gray-400">
-          Joined in August 2014
+          <strong>Role:</strong> {role}
         </div>
+
+        {/* Department */}
         <div className="text-sm text-gray-500 dark:text-gray-400">
-          Joined in August 2014
+          <strong>Department:</strong> {department}
         </div>
+
+        {/* Email */}
         <div className="text-sm text-gray-500 dark:text-gray-400">
-          Joined in August 2014
+          <strong>Email:</strong> {email}
         </div>
+
+        {/* Phone */}
+        <div className="text-sm text-gray-500 dark:text-gray-400">
+          <strong>Phone:</strong> {phone}
+        </div>
+        <Button pill outline gradientDuoTone="cyanToBlue">
+        Edit Profile
+      </Button>
       </div>
     </Avatar>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import LoginForm from "../Auth/Login/LoginForm";
 import Banner from "../../Components/Banner";
-import { HorizontalLine } from "../../Components/HorizontalLine";
 
 const Home = () => {
   return (
@@ -14,7 +13,6 @@ const Home = () => {
               <LoginForm />
             </div>
           </div>
-          {/* <div className="w-full "><HorizontalLine/></div> */}
           
         </div>
       </section>

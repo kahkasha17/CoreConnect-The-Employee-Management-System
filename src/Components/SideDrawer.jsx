@@ -1,16 +1,37 @@
 "use client";
 
 import { Button, Drawer, Sidebar } from "flowbite-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import { UserAvatar } from "./UserAvatar";
 import { SearchBar } from "./SearchBar";
 
 export const SideDrawer = ({ menuItems, isOpen, setIsOpen }) => {
+  const [hasInitialized, setHasInitialized] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (!hasInitialized) {
+        setIsOpen(window.innerWidth >= 768); // Open on desktop, closed on mobile
+        setHasInitialized(true); // Mark as initialized
+      } else if (window.innerWidth >= 768) {
+        setIsOpen(true);
+      } else {
+        setIsOpen(false);
+      }
+    };
+    
+    handleResize(); // Initial check on mount
+
+    window.addEventListener("resize", handleResize); // Listen for screen resize
+    return () => window.removeEventListener("resize", handleResize);
+  }, [hasInitialized, setIsOpen]);
+
   const handleClose = () => setIsOpen(false);
 
   return (
     <>
+      {/* Toggle Button for opening sidebar on mobile */}
       {!isOpen && (
         <Button
           gradientMonochrome="info"
@@ -20,8 +41,9 @@ export const SideDrawer = ({ menuItems, isOpen, setIsOpen }) => {
           <span className="text-xl">☰</span>
         </Button>
       )}
-      <Drawer 
       
+      {/* Sidebar Drawer */}
+      <Drawer
         className="bg-gradient-to-r from-cyan-500 to-blue-400"
         backdrop={false}
         open={isOpen}

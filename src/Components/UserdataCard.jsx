@@ -5,7 +5,7 @@ import UserDataAvatar from '../Components/UserDataAvatar'; // Ensure this path i
 export const UserdataCard = () => {
     return (
         <Card className="flex items-center" horizontal >
-          <UserDataAvatar img="/homebg.avif"/> {/* Avatar component */}
+          <UserDataAvatar img="/homebg.avif" name='Kahkasha Rafat Fatima'role="" department="" email="" phone="" /> {/* Avatar component */}
           
         </Card>
     );
