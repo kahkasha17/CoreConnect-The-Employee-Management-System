@@ -2,9 +2,14 @@
 
 import { Checkbox, Table } from "flowbite-react";
 import { Card } from "flowbite-react";
+
 import React from "react";
+import ToggleSwitch from "./ToggleSwitch";
 
 const Tasklist = () => {
+
+ 
+
   return (
     <Card className="max-w-4xl">
       <div className="mb-4 flex items-center justify-between">
@@ -36,7 +41,7 @@ const Tasklist = () => {
               <Table.Cell>Designing</Table.Cell>
               <Table.Cell>kahkasha</Table.Cell>
               <Table.Cell>
-                <Checkbox />
+              <ToggleSwitch/>
               </Table.Cell>
             </Table.Row>
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -47,7 +52,7 @@ const Tasklist = () => {
               <Table.Cell>Designing</Table.Cell>
               <Table.Cell>kahkasha</Table.Cell>
               <Table.Cell>
-                <Checkbox />
+              <ToggleSwitch/>
               </Table.Cell>
             </Table.Row>
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -58,7 +63,7 @@ const Tasklist = () => {
               <Table.Cell>Designing</Table.Cell>
               <Table.Cell>kahkasha</Table.Cell>
               <Table.Cell>
-                <Checkbox />
+              <ToggleSwitch/>
               </Table.Cell>
             </Table.Row>
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -69,7 +74,7 @@ const Tasklist = () => {
               <Table.Cell>Designing</Table.Cell>
               <Table.Cell>kahkasha</Table.Cell>
               <Table.Cell>
-                <Checkbox />
+              <ToggleSwitch/>
               </Table.Cell>
             </Table.Row>
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -80,7 +85,7 @@ const Tasklist = () => {
               <Table.Cell>Designing</Table.Cell>
               <Table.Cell>kahkasha</Table.Cell>
               <Table.Cell>
-                <Checkbox />
+              <ToggleSwitch/>
               </Table.Cell>
             </Table.Row>
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -91,7 +96,7 @@ const Tasklist = () => {
               <Table.Cell>Designing</Table.Cell>
               <Table.Cell>kahkasha</Table.Cell>
               <Table.Cell>
-                <Checkbox />
+              <ToggleSwitch/>
               </Table.Cell>
             </Table.Row>
           </Table.Body>

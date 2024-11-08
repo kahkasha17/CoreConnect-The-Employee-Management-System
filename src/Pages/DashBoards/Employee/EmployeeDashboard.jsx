@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { SideDrawer } from "../../../Components/SideDrawer";
-import Navbar from "../../../Components/Navbar";
 import {
   HiBriefcase,
   HiCalendar,
@@ -49,7 +48,7 @@ export const EmployeeDashboard = () => {
 
   return (
     <>
-      <div className="h-screen flex overflow-hidden relative bg-sky-50">
+      <div className="flex relative bg-sky-50">
         <SideDrawer
           menuItems={menuData}
           isOpen={isSidebarOpen}

@@ -4,10 +4,11 @@ import { Datepicker } from "flowbite-react";
 import Footers from "../../../Components/Footers";
 import TaskCalendar from '../../../Components/TaskCalendar'
 import Tasklist from "../../../Components/Tasklist";
+import UpcomingEvent from "../../../Components/UpcomingEvent";
 
 export const MainContent = () => {
   return (
-    <div className="h-screen overflow-y-auto">
+    <div className="h-screen ">
       <div className="container mx-auto">
         {/* First Row: Three Columns */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
@@ -22,13 +23,13 @@ export const MainContent = () => {
           </div>
 
           {/* Third Column (takes one-quarter width) */}
-          <div className="col-span-1 bg-red-500 p-4 rounded-md">
-            <h2 className="text-white">Column 3</h2>
+          <div className="col-span-1  rounded-md">
+           <UpcomingEvent/>
           </div>
         </div>
 
         {/* Second Row: Two Columns, Adjusted Width */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-6 mb-6 ">
           {/* First Column (takes 3/4 of width on medium+) */}
           <div className="col-span-3 rounded-md">
             <Tasklist/>
