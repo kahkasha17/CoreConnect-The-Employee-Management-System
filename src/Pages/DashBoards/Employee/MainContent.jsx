@@ -5,6 +5,7 @@ import Footers from "../../../Components/Footers";
 import TaskCalendar from '../../../Components/TaskCalendar'
 import Tasklist from "../../../Components/Tasklist";
 import UpcomingEvent from "../../../Components/UpcomingEvent";
+import RequestList from "../../../Components/RequestList";
 
 export const MainContent = () => {
   return (
@@ -36,8 +37,8 @@ export const MainContent = () => {
           </div>
 
           {/* Second Column (takes 1/4 of width on medium+) */}
-          <div className="col-span-1 bg-red-500 p-4 rounded-md">
-            <h2 className="text-white">Column 2</h2>
+          <div className="col-span-1 rounded-md">
+            <RequestList/>
           </div>
         </div>
       </div>
