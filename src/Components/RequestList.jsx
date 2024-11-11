@@ -4,7 +4,7 @@ const RequestList = () => {
     return (
         <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 h-[60vh] overflow-y-auto">
           <h5 className="text-base font-semibold text-gray-900 md:text-xl dark:text-white">
-            Your Requests 
+            Your Login Details
           </h5>
           <ul className="">
             <li>
