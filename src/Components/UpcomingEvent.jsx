@@ -4,7 +4,7 @@ import React from "react";
 
 const UpcomingEvent = () => {
   return (
-    <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 max-h-[36vh] overflow-y-auto">
+    <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700 h-[30vh] overflow-y-auto">
       <h5 className="text-base font-semibold text-gray-900 md:text-xl dark:text-white">
         Upcoming Events
       </h5>

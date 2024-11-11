@@ -7,8 +7,8 @@ const App = () => {
   return (
     <>
 
-<Main/>
-{/* <EmployeeDashboard/> */}
+{/* <Main/> */}
+<EmployeeDashboard/> 
 
    </>
   )

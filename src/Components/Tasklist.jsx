@@ -5,6 +5,7 @@ import { Card } from "flowbite-react";
 
 import React from "react";
 import ToggleSwitch from "./ToggleSwitch";
+import Buttons from "./Buttons";
 
 const Tasklist = () => {
 
@@ -16,12 +17,7 @@ const Tasklist = () => {
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
           Total Tasks
         </h5>
-        <a
-          href="#"
-          className="text-sm font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-        >
-          View all
-        </a>
+        <Buttons  type="Submit" name="Submit"/>
       </div>
       <div className="overflow-x-auto">
         <Table hoverable>
