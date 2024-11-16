@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const AttendanceandLeave = () => {
+const AttendanceandLeave = () => {
   return (
     <div>AttendanceandLeave</div>
   )
 }
+
+export default AttendanceandLeave

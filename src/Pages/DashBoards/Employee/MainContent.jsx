@@ -8,6 +8,7 @@ import RequestList from "../../../Components/RequestList";
 
 export const MainContent = () => {
   return (
+    <>
     <div className="h-screen ">
       <div className="container mx-auto">
         {/* First Row: Three Columns */}
@@ -42,6 +43,7 @@ export const MainContent = () => {
         </div>
       </div>
       <Footers/>
-    </div>
+    </div></>
   );
 };
+export default MainContent
