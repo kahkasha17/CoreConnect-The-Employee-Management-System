@@ -18,6 +18,9 @@ import {
 } from "react-icons/hi";
 import MainContent from "./MainContent";
 import Profile from "../../Common/Profile";
+import Task from "../../Common/Task";
+import Help from "../../Common/Help";
+import Job from "../../Common/Job";
 import Payroll from "../../Common/Payroll";
 import AttendanceandLeave from "../../Common/AttendanceandLeave";
 
@@ -38,17 +41,17 @@ export const AdminDashboard = () => {
       items: [
         {
           label: "Task",
-          href: "https://github.com/themesberg/flowbite-react/",
+          href: "/task",
           icon: HiClipboard,
         },
         {
           label: "Job",
-          href: "https://flowbite-react.com/",
+          href: "/job",
           icon: HiBriefcase,
         },
         {
           label: "Help",
-          href: "https://github.com/themesberg/flowbite-react/issues",
+          href: "/hep",
           icon: HiInformationCircle,
         },
       ],
@@ -77,6 +80,9 @@ export const AdminDashboard = () => {
               <Route path="/profile" element={<Profile />} />
               <Route path="/payroll" element={<Payroll />} />
               <Route path="/attendance" element={<AttendanceandLeave />} />
+              <Route path="/help" element={<Help />} />
+              <Route path="/job" element={<Job />} />
+              <Route path="/task" element={<Task />} />
               {/* Add more routes as needed */}
             </Routes>
           </div>
