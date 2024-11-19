@@ -10,3 +10,5 @@ export const UserdataCard = () => {
         </Card>
     );
 }
+
+export default UserdataCard

@@ -1,8 +1,13 @@
 import React from 'react'
+import UserdataCard from '../../Components/UserdataCard'
 
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <>
+    
+    <UserdataCard className="w-full"/>
+    
+    </>
   )
 }
 
