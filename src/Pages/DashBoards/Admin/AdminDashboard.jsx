@@ -18,11 +18,12 @@ import {
 } from "react-icons/hi";
 import MainContent from "./MainContent";
 import Profile from "../../Common/Profile";
-import Task from "../../Common/Task";
 import Help from "../../Common/Help";
 import Job from "../../Common/Job";
 import Payroll from "../../Common/Payroll";
 import AttendanceandLeave from "../../Common/AttendanceandLeave";
+import Employess from "../../Common/Employess";
+import Footers from "../../../Components/Footers";
 
 export const AdminDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -40,8 +41,8 @@ export const AdminDashboard = () => {
     {
       items: [
         {
-          label: "Task",
-          href: "/task",
+          label: "Employess",
+          href: "/Employess",
           icon: HiClipboard,
         },
         {
@@ -82,14 +83,17 @@ export const AdminDashboard = () => {
               <Route path="/attendance" element={<AttendanceandLeave />} />
               <Route path="/help" element={<Help />} />
               <Route path="/job" element={<Job />} />
-              <Route path="/task" element={<Task />} />
+              <Route path="/Employess" element={<Employess />} />
               {/* Add more routes as needed */}
             </Routes>
           </div>
         </div>
       </div>
+      <div className={`p-0 ${isSidebarOpen ? "ml-80" : "ml-0"}`}>
+        <Footers />
+      </div>
     </Router>
   );
 };
 
-export default AdminDashboard
+export default AdminDashboard;

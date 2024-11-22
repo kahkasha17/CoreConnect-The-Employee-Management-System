@@ -1,13 +1,12 @@
 import React from "react";
 import { UserdataCard } from "../../../Components/UserdataCard";
-import Footers from "../../../Components/Footers";
 import TaskCalendar from '../../../Components/TaskCalendar'
-import Tasklist from "../../../Components/Tasklist";
 import UpcomingEvent from "../../../Components/UpcomingEvent";
 import RequestList from "../../../Components/RequestList";
 
 export const MainContent = () => {
   return (
+    <>
     <div className="h-screen ">
       <div className="container mx-auto">
         {/* First Row: Three Columns */}
@@ -32,7 +31,7 @@ export const MainContent = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-6 mb-6 ">
           {/* First Column (takes 3/4 of width on medium+) */}
           <div className="col-span-3 rounded-md">
-            <Tasklist/>
+            {/* <Tasklist/> */}
           </div>
 
           {/* Second Column (takes 1/4 of width on medium+) */}
@@ -41,8 +40,10 @@ export const MainContent = () => {
           </div>
         </div>
       </div>
-      <Footers/>
+    
     </div>
+    
+    </>
   );
 };
 

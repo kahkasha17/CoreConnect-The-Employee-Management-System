@@ -20,6 +20,7 @@ import MainContent from "./MainContent";
 import Profile from "../../Common/Profile";
 import Payroll from "../../Common/Payroll";
 import AttendanceandLeave from "../../Common/AttendanceandLeave";
+import Footers from "../../../Components/Footers";
 
 export const ManagerDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -82,7 +83,10 @@ export const ManagerDashboard = () => {
           </div>
         </div>
       </div>
+      <div className={`p-0 ${isSidebarOpen ? "ml-80" : "ml-0"}`}>
+        <Footers />
+      </div>
     </Router>
   );
 };
- export default ManagerDashboard
+export default ManagerDashboard;

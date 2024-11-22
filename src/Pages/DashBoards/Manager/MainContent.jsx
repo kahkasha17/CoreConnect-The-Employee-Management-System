@@ -1,6 +1,5 @@
 import React from "react";
 import { UserdataCard } from "../../../Components/UserdataCard";
-import Footers from "../../../Components/Footers";
 import TaskCalendar from '../../../Components/TaskCalendar'
 import Tasklist from "../../../Components/Tasklist";
 import UpcomingEvent from "../../../Components/UpcomingEvent";
@@ -41,7 +40,6 @@ export const MainContent = () => {
           </div>
         </div>
       </div>
-      <Footers/>
     </div>
   );
 };

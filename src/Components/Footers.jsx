@@ -18,8 +18,6 @@ const Footers = () => {
           <div>
             <Footer.Brand
               href="#"
-              src="/Logo.png"
-              alt="CoreConnect Logo"
               name="CoreConnect"
             />
           </div>
