@@ -28,7 +28,7 @@ export const MainContent = () => {
         </div>
 
         {/* Second Row: Two Columns, Adjusted Width */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-6 mb-6 ">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-0 mb-6 ">
           {/* First Column (takes 3/4 of width on medium+) */}
           <div className="col-span-3 rounded-md">
             {/* <Tasklist/> */}
