@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "A MERN stack application",
   "main": "index.js",
-  "scripts": {
+ "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon backend/src/server.js",
-    "client": "npm run dev -- --host --prefix frontend"
+    "client": "npm run dev --prefix frontend"
   },
   "dependencies": {
     "concurrently": "^9.1.0"
