@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Navigate,
+  useLocation,
 } from "react-router-dom";
 import { SideDrawer } from "../../../Components/SideDrawer";
 import {
@@ -24,6 +25,47 @@ import Payroll from "../../Common/Payroll";
 import AttendanceandLeave from "../../Common/AttendanceandLeave";
 import Employess from "../../Common/Employess";
 import Footers from "../../../Components/Footers";
+
+const DashboardContent = ({ isSidebarOpen }) => {
+  // Map of routes to header titles
+  const headerTitles = {
+    "/AdminDashboard": "Dashboard",
+    "/profile": "Profile",
+    "/payroll": "Payroll",
+    "/attendance": "Attendance & Leaves",
+    "/authentication/sign-up": "Sign Up",
+    "/Employess": "Employees",
+    "/job": "Job",
+    "/help": "Help",
+  };
+
+  const location = useLocation();
+
+  return (
+    <>
+      {/* Header */}
+      <div className={`p-5 ${isSidebarOpen ? "ml-80" : "ml-20"}`}>
+        <h1 className="text-lg font-bold mb-6">
+          {headerTitles[location.pathname] || "Dashboard"}
+        </h1>
+      </div>
+
+      {/* Routes */}
+      <div className={`p-4 ${isSidebarOpen ? "ml-80" : "ml-0"}`}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/AdminDashboard" />} />
+          <Route path="/AdminDashboard" element={<MainContent />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/payroll" element={<Payroll />} />
+          <Route path="/attendance" element={<AttendanceandLeave />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/job" element={<Job />} />
+          <Route path="/Employess" element={<Employess />} />
+        </Routes>
+      </div>
+    </>
+  );
+};
 
 export const AdminDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -52,7 +94,7 @@ export const AdminDashboard = () => {
         },
         {
           label: "Help",
-          href: "/hep",
+          href: "/help",
           icon: HiInformationCircle,
         },
       ],
@@ -69,7 +111,6 @@ export const AdminDashboard = () => {
           setIsOpen={setIsSidebarOpen}
         />
 
-        {/* Backdrop for Mobile View */}
         {isSidebarOpen && window.innerWidth < 768 && (
           <div
             className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"
@@ -83,38 +124,18 @@ export const AdminDashboard = () => {
             isSidebarOpen && window.innerWidth < 768 ? "hidden" : "block"
           }`}
         >
-          {/* Header */}
-          <div className={`p-5 ${isSidebarOpen ? "ml-80" : "ml-20"}`}>
-            <h1 className="text-lg font-bold mb-6">Dashboard</h1>
-          </div>
-
-          {/* Routes */}
-          <div className={`p-4 ${isSidebarOpen ? "ml-80" : "ml-0"}`}>
-            <Routes>
-              <Route path="/" element={<Navigate to="/AdminDashboard" />} />
-              <Route path="/AdminDashboard" element={<MainContent />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/payroll" element={<Payroll />} />
-              <Route path="/attendance" element={<AttendanceandLeave />} />
-              <Route path="/help" element={<Help />} />
-              <Route path="/job" element={<Job />} />
-              <Route path="/Employess" element={<Employess />} />
-            </Routes>
-          </div>
+          <DashboardContent isSidebarOpen={isSidebarOpen} />
         </div>
       </div>
 
       {/* Footer */}
       <div
-  className={`p-0 transition-all duration-300 ${
-    isSidebarOpen && window.innerWidth >= 768 ? "ml-80" : "ml-0" // Add margin-left when sidebar is open (desktop view)
-  } ${window.innerWidth < 768 && isSidebarOpen ? "hidden" : "block"}`} // Hide footer on mobile when sidebar is open
->
-  <Footers />
-</div>
-
-
-        
+        className={`p-0 transition-all duration-300 ${
+          isSidebarOpen && window.innerWidth >= 768 ? "ml-80" : "ml-0"
+        } ${window.innerWidth < 768 && isSidebarOpen ? "hidden" : "block"}`}
+      >
+        <Footers />
+      </div>
     </Router>
   );
 };
