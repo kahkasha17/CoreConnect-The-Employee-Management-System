@@ -12,7 +12,7 @@ const Tasklist = () => {
  
 
   return (
-    <Card className="max-w-4xl  h-[61vh] overflow-y-auto">
+    <Card className="max-w-4xl mb-8  max-h-svh overflow-x-auto border-l-8 border-cyan-500">
       <div className="mb-4 flex items-center justify-between">
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
           Total Tasks
@@ -29,6 +29,61 @@ const Tasklist = () => {
             <Table.HeadCell>Status</Table.HeadCell>
           </Table.Head>
           <Table.Body className="divide-y">
+            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                07/10/2014
+              </Table.Cell>
+              <Table.Cell>Redisgn Navbar</Table.Cell>
+              <Table.Cell>Designing</Table.Cell>
+              <Table.Cell>kahkasha</Table.Cell>
+              <Table.Cell>
+              <ToggleSwitch/>
+              </Table.Cell>
+            </Table.Row>
+            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                07/10/2014
+              </Table.Cell>
+              <Table.Cell>Redisgn Navbar</Table.Cell>
+              <Table.Cell>Designing</Table.Cell>
+              <Table.Cell>kahkasha</Table.Cell>
+              <Table.Cell>
+              <ToggleSwitch/>
+              </Table.Cell>
+            </Table.Row>
+            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                07/10/2014
+              </Table.Cell>
+              <Table.Cell>Redisgn Navbar</Table.Cell>
+              <Table.Cell>Designing</Table.Cell>
+              <Table.Cell>kahkasha</Table.Cell>
+              <Table.Cell>
+              <ToggleSwitch/>
+              </Table.Cell>
+            </Table.Row>
+            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                07/10/2014
+              </Table.Cell>
+              <Table.Cell>Redisgn Navbar</Table.Cell>
+              <Table.Cell>Designing</Table.Cell>
+              <Table.Cell>kahkasha</Table.Cell>
+              <Table.Cell>
+              <ToggleSwitch/>
+              </Table.Cell>
+            </Table.Row>
+            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                07/10/2014
+              </Table.Cell>
+              <Table.Cell>Redisgn Navbar</Table.Cell>
+              <Table.Cell>Designing</Table.Cell>
+              <Table.Cell>kahkasha</Table.Cell>
+              <Table.Cell>
+              <ToggleSwitch/>
+              </Table.Cell>
+            </Table.Row>
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
               <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                 07/10/2014
