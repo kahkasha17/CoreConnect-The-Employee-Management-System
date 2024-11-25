@@ -6,10 +6,12 @@ export const TaskCalendar = () => {
 
   return (
     <>
-     <Card className="flex flex-col justify-items-start h-full">
-  <Datepicker  value={selectedDate} onChange={setSelectedDate} />
-</Card>
-
+      <Card className="max-w-sm border-l-8 border-cyan-500 ... h-full ">
+        <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
+          View Your Schedule
+        </h5>{" "}
+        <Datepicker value={selectedDate} onChange={setSelectedDate} />
+      </Card>
     </>
   );
 };
