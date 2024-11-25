@@ -10,7 +10,7 @@ export const TaskCalendar = () => {
         <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
           View Your Schedule
         </h5>{" "}
-        <Datepicker value={selectedDate} onChange={setSelectedDate} />
+        <Datepicker value={selectedDate} onChange={setSelectedDate} /><br/> <br/>
       </Card>
     </>
   );

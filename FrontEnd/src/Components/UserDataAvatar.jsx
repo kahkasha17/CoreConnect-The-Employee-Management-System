@@ -30,7 +30,7 @@ const UserDataAvatar = ({ img, name, role, department, email, phone }) => {
         <div className="text-sm text-gray-500 dark:text-gray-400">
           <strong>Phone:</strong> {phone}
         </div>
-        <Button pill outline gradientDuoTone="cyanToBlue">
+        <Button pill outline gradientMonochrome="cyan">
         Edit Profile
       </Button>
       </div>
