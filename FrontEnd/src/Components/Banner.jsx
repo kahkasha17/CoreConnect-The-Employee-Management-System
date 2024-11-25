@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, Tooltip } from "flowbite-react";
-import Button from "../Components/Buttons";
+import Button from "./Buttons";
 
 import React from "react";
 

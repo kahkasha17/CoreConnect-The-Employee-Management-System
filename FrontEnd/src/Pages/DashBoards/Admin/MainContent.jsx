@@ -3,6 +3,7 @@ import { UserdataCard } from "../../../Components/UserdataCard";
 import TaskCalendar from '../../../Components/TaskCalendar'
 import UpcomingEvent from "../../../Components/UpcomingEvent";
 import RequestList from "../../../Components/RequestList";
+import Tasklist from "../../../Components/Tasklist";
 
 export const MainContent = () => {
   return (
@@ -31,7 +32,7 @@ export const MainContent = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-6 mb-6 ">
           {/* First Column (takes 3/4 of width on medium+) */}
           <div className="col-span-3 rounded-md">
-            {/* <Tasklist/> */}
+            <Tasklist/>
           </div>
 
           {/* Second Column (takes 1/4 of width on medium+) */}

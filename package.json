@@ -1,34 +1,19 @@
 {
-  "name": "coreconnect",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+  "name": "mern-app",
+  "version": "1.0.0",
+  "description": "A MERN stack application",
+  "main": "index.js",
+ "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon backend/src/server.js",
+    "client": "npm run dev --prefix frontend"
   },
   "dependencies": {
-    "flowbite-react": "^0.10.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0",
-    "react-switch": "^7.0.0"
+    "concurrently": "^9.1.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.13.0",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9.13.0",
-    "eslint-plugin-react": "^7.37.1",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.13",
-    "globals": "^15.11.0",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14",
-    "vite": "^5.4.9"
-  }
+    "nodemon": "^2.0.22"
+  },
+  "author": "Kahkasha",
+  "license": "ISC"
 }

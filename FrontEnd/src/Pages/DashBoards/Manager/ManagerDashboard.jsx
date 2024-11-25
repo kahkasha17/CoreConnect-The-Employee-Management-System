@@ -22,13 +22,13 @@ import Payroll from "../../Common/Payroll";
 import AttendanceandLeave from "../../Common/AttendanceandLeave";
 import Footers from "../../../Components/Footers";
 
-export const EmployeeDashboard = () => {
+export const ManagerDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const menuData = [
     {
       items: [
-        { label: "Dashboard", href: "/dashboard", icon: HiChartPie },
+        { label: "Dashboard", href: "/ManagerDashboard", icon: HiChartPie },
         { label: "Profile", href: "/profile", icon: HiUser },
         { label: "Payroll", href: "/payroll", icon: HiCurrencyRupee },
         { label: "Attendance & Leaves", href: "/attendance", icon: HiCalendar },
@@ -59,22 +59,37 @@ export const EmployeeDashboard = () => {
   return (
     <Router>
       <div className="flex relative bg-sky-50">
+        {/* Sidebar */}
         <SideDrawer
           menuItems={menuData}
           isOpen={isSidebarOpen}
           setIsOpen={setIsSidebarOpen}
         />
-        {/* Header */}
-        <div className="flex-1 transition-all duration-300 flex flex-col">
+
+        {/* Backdrop for Mobile View */}
+        {isSidebarOpen && window.innerWidth < 768 && (
+          <div
+            className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"
+            onClick={() => setIsSidebarOpen(false)} // Close sidebar when backdrop is clicked
+          ></div>
+        )}
+
+        {/* Main Content */}
+        <div
+          className={`flex-1 transition-all duration-300 flex flex-col ${
+            isSidebarOpen && window.innerWidth < 768 ? "hidden" : "block"
+          }`}
+        >
+          {/* Header */}
           <div className={`p-5 ${isSidebarOpen ? "ml-80" : "ml-20"}`}>
             <h1 className="text-lg font-bold mb-6">Dashboard</h1>
           </div>
-          {/* Main Content */}
 
+          {/* Routes */}
           <div className={`p-4 ${isSidebarOpen ? "ml-80" : "ml-0"}`}>
-            <Routes>
-              <Route path="/" element={<Navigate to="/dashboard" />} />
-              <Route path="/dashboard" element={<MainContent />} />
+          <Routes>
+              <Route path="/" element={<Navigate to="/ManagerDashboard" />} />
+              <Route path="/ManagerDashboard" element={<MainContent />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/payroll" element={<Payroll />} />
               <Route path="/attendance" element={<AttendanceandLeave />} />
@@ -83,9 +98,19 @@ export const EmployeeDashboard = () => {
           </div>
         </div>
       </div>
-      <div className={`p-0 ${isSidebarOpen ? "ml-80" : "ml-0"}`}>
-        <Footers />
-      </div>
+
+      {/* Footer */}
+      <div
+  className={`p-0 transition-all duration-300 ${
+    isSidebarOpen && window.innerWidth >= 768 ? "ml-80" : "ml-0" // Add margin-left when sidebar is open (desktop view)
+  } ${window.innerWidth < 768 && isSidebarOpen ? "hidden" : "block"}`} // Hide footer on mobile when sidebar is open
+>
+  <Footers />
+</div>
+
+
+        
     </Router>
   );
 };
+export default ManagerDashboard;
