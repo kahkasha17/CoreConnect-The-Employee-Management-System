@@ -8,7 +8,7 @@ import Tasklist from "../../../Components/Tasklist";
 export const MainContent = () => {
   return (
     <div >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 min-w-full">
         {/* First Row */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {/* First Column (50% width on medium+ screens) */}
@@ -26,14 +26,12 @@ export const MainContent = () => {
         </div>
 
         {/* Second Row */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-10">
-          {/* First Column (75% width on medium+ screens) */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4  mt-10">
           <div className="col-span-1 md:col-span-3">
             <Tasklist />
           </div>
 
-          {/* Second Column (25% width on medium+ screens with 2 rows inside) */}
-          <div className="col-span-1 grid grid-rows-2 max-h-screen">
+          <div className="col-span-1 grid grid-rows-3 max-h-full ">
             <div className="rounded-md mb-2">
               <RequestList />
             </div>
