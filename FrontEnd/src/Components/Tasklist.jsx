@@ -12,7 +12,7 @@ const Tasklist = () => {
  
 
   return (
-    <Card className="max-w-4xl mb-8  max-h-svh overflow-x-auto border-l-8 border-cyan-500">
+    <Card className="max-w-4xl mb-8  max-h-screen overflow-x-auto border-l-8 border-cyan-500">
       <div className="mb-4 flex items-center justify-between">
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
           Total Tasks

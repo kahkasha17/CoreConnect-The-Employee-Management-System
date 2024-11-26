@@ -103,7 +103,7 @@ export const AdminDashboard = () => {
 
   return (
     <Router>
-      <div className="flex relative bg-sky-50">
+      <div  className="flex relative bg-gradient-to-r from-cyan-100 to-blue-250">
         {/* Sidebar */}
         <SideDrawer
           menuItems={menuData}

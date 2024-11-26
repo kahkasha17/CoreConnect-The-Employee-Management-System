@@ -33,9 +33,13 @@ export const MainContent = () => {
           </div>
 
           {/* Second Column (25% width on medium+ screens with 2 rows inside) */}
-          <div className="col-span-1 grid grid-rows-2 gap-2">
-            <div className="rounded-md mb-4">
+          <div className="col-span-1 grid grid-rows-2 max-h-screen">
+            <div className="rounded-md mb-2">
               <RequestList />
+            </div>
+            <div className="rounded-md mb-2">
+             <RequestList/>
+
             </div>
             <div className="rounded-md mb-4">
              <RequestList/>

@@ -25,7 +25,7 @@ export const SideDrawer = ({ menuItems, isOpen, setIsOpen }) => {
     <>
       {/* Toggle Button */}
       <Button
-        gradientMonochrome="info"
+        gradientMonochrome="cyan"
         className={`absolute top-4 left-4 z-10 ${
           isOpen ? "hidden" : "block"
         }`} // Show button only when sidebar is closed
@@ -36,7 +36,7 @@ export const SideDrawer = ({ menuItems, isOpen, setIsOpen }) => {
 
       {/* Sidebar Drawer */}
       <Drawer
-        className="bg-gradient-to-r from-cyan-500 to-blue-400"
+        className="bg-gradient-to-r from-cyan-200 to-blue-300"
         backdrop={false}
         open={isOpen}
         onClose={() => setIsOpen(false)} // Close the sidebar
