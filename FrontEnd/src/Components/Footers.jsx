@@ -57,7 +57,7 @@ const Footers = () => {
         <div className="w-full sm:flex sm:items-center justify-between">
           <Footer.Copyright
             href="#"
-            by="Galaxy™ All Rights Reserved."
+            by="Made with 	&#10084; by Galaxy™ All Rights Reserved."
             year={2024}
           />
           <div className="mt-4 flex space-x-6 sm:mt-0 justify-center">
