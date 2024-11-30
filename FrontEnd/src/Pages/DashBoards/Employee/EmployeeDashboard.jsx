@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Navigate,
+  useLocation,
 } from "react-router-dom";
 import { SideDrawer } from "../../../Components/SideDrawer";
 import {
@@ -18,11 +19,53 @@ import {
 } from "react-icons/hi";
 import MainContent from "./MainContent";
 import Profile from "../../Common/Profile";
-import Payroll from "../../Common/Payroll";
-import AttendanceandLeave from "../../Common/AttendanceandLeave";
-import Footers from "../../../Components/Footers";
 import Help from "../../Common/Help";
 import Job from "../../Common/Job";
+import Payroll from "../../Common/Payroll";
+import AttendanceandLeave from "../../Common/AttendanceandLeave";
+import Task from "../../Common/Task";
+import Footers from "../../../Components/Footers";
+
+const DashboardContent = ({ isSidebarOpen }) => {
+  // Map of routes to header titles
+  const headerTitles = {
+    "/EmployeeDashboard": "Dashboard",
+    "/profile": "Profile",
+    "/payroll": "Payroll",
+    "/attendance": "Attendance & Leaves",
+    "/authentication/sign-up": "Sign Up",
+    "/task": "Task",
+    "/job": "Job",
+    "/help": "Help",
+  };
+
+  const location = useLocation();
+
+  return (
+    <>
+      {/* Header */}
+      <div className={`p-5 ${isSidebarOpen ? "ml-80" : "ml-20"}`}>
+        <h1 className="text-lg font-bold mb-6">
+          {headerTitles[location.pathname] || "Dashboard"}
+        </h1>
+      </div>
+
+      {/* Routes */}
+      <div className={`p-4 ${isSidebarOpen ? "ml-80" : "ml-0"}`}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/EmployeeDashboard" />} />
+          <Route path="/EmployeeDashboard" element={<MainContent />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/payroll" element={<Payroll />} />
+          <Route path="/attendance" element={<AttendanceandLeave />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/job" element={<Job />} />
+          <Route path="/task" element={<Task />} />
+        </Routes>
+      </div>
+    </>
+  );
+};
 
 export const EmployeeDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -41,17 +84,17 @@ export const EmployeeDashboard = () => {
       items: [
         {
           label: "Task",
-          href: "https://github.com/themesberg/flowbite-react/",
+          href: "/Task",
           icon: HiClipboard,
         },
         {
           label: "Job",
-          href: "https://flowbite-react.com/",
+          href: "/job",
           icon: HiBriefcase,
         },
         {
           label: "Help",
-          href: "https://github.com/themesberg/flowbite-react/issues",
+          href: "/help",
           icon: HiInformationCircle,
         },
       ],
@@ -60,7 +103,7 @@ export const EmployeeDashboard = () => {
 
   return (
     <Router>
-      <div className="flex relative bg-sky-50">
+      <div  className="flex relative bg-gradient-to-r from-cyan-100 to-blue-250">
         {/* Sidebar */}
         <SideDrawer
           menuItems={menuData}
@@ -68,7 +111,6 @@ export const EmployeeDashboard = () => {
           setIsOpen={setIsSidebarOpen}
         />
 
-        {/* Backdrop for Mobile View */}
         {isSidebarOpen && window.innerWidth < 768 && (
           <div
             className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"
@@ -82,36 +124,20 @@ export const EmployeeDashboard = () => {
             isSidebarOpen && window.innerWidth < 768 ? "hidden" : "block"
           }`}
         >
-          {/* Header */}
-          <div className={`p-5 ${isSidebarOpen ? "ml-80" : "ml-20"}`}>
-            <h1 className="text-lg font-bold mb-6">Dashboard</h1>
-          </div>
-
-          {/* Routes */}
-          <div className={`p-4 ${isSidebarOpen ? "ml-80" : "ml-0"}`}>
-          <Routes>
-              <Route path="/" element={<Navigate to="/EmployeeDashboard" />} />
-              <Route path="/EmployeeDashboard" element={<MainContent />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/payroll" element={<Payroll />} />
-              <Route path="/attendance" element={<AttendanceandLeave />} />
-              {/* Add more routes as needed */}
-            </Routes>
-          </div>
+          <DashboardContent isSidebarOpen={isSidebarOpen} />
         </div>
       </div>
 
       {/* Footer */}
       <div
-  className={`p-0 transition-all duration-300 ${
-    isSidebarOpen && window.innerWidth >= 768 ? "ml-80" : "ml-0" // Add margin-left when sidebar is open (desktop view)
-  } ${window.innerWidth < 768 && isSidebarOpen ? "hidden" : "block"}`} // Hide footer on mobile when sidebar is open
->
-  <Footers />
-</div>
-
-
-        
+        className={`p-0 transition-all duration-300 ${
+          isSidebarOpen && window.innerWidth >= 768 ? "ml-80" : "ml-0"
+        } ${window.innerWidth < 768 && isSidebarOpen ? "hidden" : "block"}`}
+      >
+        <Footers />
+      </div>
     </Router>
   );
 };
+
+export default EmployeeDashboard;

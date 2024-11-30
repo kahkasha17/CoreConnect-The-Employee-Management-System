@@ -1,47 +1,53 @@
 import React from "react";
 import { UserdataCard } from "../../../Components/UserdataCard";
-import TaskCalendar from '../../../Components/TaskCalendar'
-import Tasklist from "../../../Components/Tasklist";
+import TaskCalendar from "../../../Components/TaskCalendar";
 import UpcomingEvent from "../../../Components/UpcomingEvent";
 import RequestList from "../../../Components/RequestList";
+import Tasklist from "../../../Components/Tasklist";
 
 export const MainContent = () => {
   return (
-    <>
-    <div className="h-screen ">
-      <div className="container mx-auto">
-        {/* First Row: Three Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
-          {/* First Column (takes half the width on medium+ screens) */}
+    <div >
+      <div className="container mx-auto px-4 min-w-full">
+        {/* First Row */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          {/* First Column (50% width on medium+ screens) */}
           <div className="col-span-1 md:col-span-2">
             <UserdataCard />
           </div>
 
-          {/* Second Column (takes one-quarter width) */}
-          <div className="col-span-1 rounded-md">
-            <TaskCalendar/>
+          {/* Second and Third Columns (25% width each on medium+ screens) */}
+          <div className="col-span-1">
+            <TaskCalendar />
           </div>
-
-          {/* Third Column (takes one-quarter width) */}
-          <div className="col-span-1  rounded-md">
-           <UpcomingEvent/>
+          <div className="col-span-1">
+            <UpcomingEvent />
           </div>
         </div>
 
-        {/* Second Row: Two Columns, Adjusted Width */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-6 mb-6 ">
-          {/* First Column (takes 3/4 of width on medium+) */}
-          <div className="col-span-3 rounded-md">
-            <Tasklist/>
+        {/* Second Row */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4  mt-10">
+          <div className="col-span-1 md:col-span-3">
+            <Tasklist />
           </div>
 
-          {/* Second Column (takes 1/4 of width on medium+) */}
-          <div className="col-span-1 rounded-md">
-            <RequestList/>
+          <div className="col-span-1 grid grid-rows-3 max-h-full ">
+            <div className="rounded-md mb-2">
+              <RequestList />
+            </div>
+            <div className="rounded-md mb-2">
+             <RequestList/>
+
+            </div>
+            <div className="rounded-md mb-4">
+             <RequestList/>
+
+            </div>
           </div>
         </div>
       </div>
-    </div></>
+    </div>
   );
 };
-export default MainContent
+
+export default MainContent;

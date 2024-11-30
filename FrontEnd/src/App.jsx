@@ -10,8 +10,8 @@ const App = () => {
     <>
 
 {/* <Main/> */}
-{/* <EmployeeDashboard/>  */}
-<AdminDashboard/>
+<EmployeeDashboard/> 
+{/* <AdminDashboard/> */}
 {/* <ManagerDashboard/> */}
    </>
   )
