@@ -6,7 +6,7 @@ import React from "react";
 const Buttons = (props) => {
   return (
     
-      <Button gradientMonochrome="cyan" type={props.type} >{props.name}</Button>
+      <Button  type={props.type} >{props.name}</Button>
     
   );
 };

@@ -5,7 +5,7 @@ import Buttons from './Buttons';
 const RequestList = () => {
     return (
       <>
-      <Card className="max-w-sm border-l-8 border-cyan-500 ... ">
+      <Card className="max-w-sm border-l-8 border-l-teal-700 ... ">
         <h5 className=" text-xl font-medium text-gray-500 dark:text-gray-400">
           Your Login Details
         </h5>

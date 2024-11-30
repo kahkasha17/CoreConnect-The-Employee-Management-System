@@ -14,7 +14,7 @@ const ToggleSwitch = () => {
         <Switch
           onChange={handleChange}
           checked={checked}
-          onColor="#1ab1ed"
+          onColor="#155E75"
           offColor="#ed1a2f"
           width={100}         
           height={38}         
